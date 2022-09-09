@@ -1,11 +1,49 @@
 @import './var.scss';
+@import './header.scss';
+@font-face {
+    font-family: "Bitter";
+    src: url(../fonts/Bitter-Regular.ttf);
+}
+@font-face {
+    font-family: "Varela Round";
+    //font-style: normal;
+    src: url(../fonts/VarelaRound-Regular.ttf);
+}
+@font-face{
+    font-family: "Bitter bold";
+    font-style: bold;
+    src: url(../fonts/Bitter-Bold.ttf);
+}
+@font-face{
+    font-family: "Bitter italic";
+    font-style: italic;
+    src: url(../fonts/Bitter-Italic.ttf);
+}
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-//row gap i column gap jesu li 20 ili 17??
+body{
+    background-color: $bg-body;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.space-between{
+    justify-content: space-between;
+}
 //visina malih bannera u sidebaru?
 .container{
     width: 940px;
@@ -14,35 +52,23 @@
     gap: 20px;
     grid-template-columns: repeat(3,1fr);
     margin: 0 auto;
-    background-color: #d4d4d4;
-}
-.header{
-    background-color: $footer-header-bg;
-    border-bottom: solid 1px #000;
-    nav{
-        grid-column: 1/span 3;
-    }
-    &-nav{
-        display: flex;
-        justify-content: space-between;
-        background-color: $footer-header-bg;
-    }
-}
-.categories {
-    background-color: #6262a7 ;
-    & .container{
-        background-color: #6262a7;
-    }
-}
-.purple{
-    height: 20px;
-    background-color: #6262a7;
+    font-family: "Valea Round";
 }
 
+
+.purple{
+    height: 20px;
+    background-color: $bg-categories;
+}
 ul{
     display: flex;
     li{
         list-style: none;
+        @include flexCenter();
+        a{
+            color: $white;
+            text-decoration: none;
+        }
      }
 }
 .banner{
@@ -50,11 +76,9 @@ ul{
     color: $text-light;
     height: 120px;
     background-color: $white;
-    
-    //mixin center
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: "Valea Round";
+    font-size: 14px;
+    @include flexCenter();
     &-lg{
         grid-column: span 3;
     }
@@ -65,38 +89,92 @@ ul{
         grid-column: span 1;
     }
     &-xs{
-       width: 125px;
-       height: 125px;
+       width: 120px;
+       height: 120px;
     }
 }
 .container-banner-xs{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-content: center;
     padding: 20px;
+    background-color: $bg-banner-container;
 }
 .slider-container{
     height: 425px;
     grid-column: span 3;
 }
+h2{
+    font-family: "Bitter bold";
+    font-size: 24px;
+    color: $text-dark;
+}
+a{
+    font-family: "Valea Round";
+    color: $link;
+    font-size: 14px;
+}
 .category{
     grid-column: 1/ span 2;
     grid-column-start: 1;
-    height: 325px;
     background-color: $white;
+    border-left: 10px solid;
+    padding: 30px;
+    display: grid;
+    row-gap: 30px;
+    &.sport,&.news{
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 20px;
+    }
+    &.business{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto 90px 90px;
+        div{
+            margin-left: 15px;
+        }
+    }
+    &.tech{
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 20px;
+    }
+    &.tech,&.travel{
+        .icon{
+            width: 16px;
+            height: 22px;
+            margin-left: 14px;
+        }
+        .column img{
+            height: 150px;
+        }
+    }
+    .top{
+       grid-column: 1/-1; 
+    };
+    .date{
+        font-family: "Varela Round";
+        font-size: 12px;
+        color: $text-date;
+        margin-top: 5px;
+    }
+    .headline{
+        font-family: "Bitter bold";
+        font-size: 14px;
+        color: $text-dark;
+    }
+    &.col-span-1{
+        grid-column:span 1;
+    }
 }
 .sidebar{
     grid-column: 3/ span 1;
-}
-.sidebar2{
-    grid-row: 5/span 5;
+    grid-row: 3/span 7;
     display: grid;
     row-gap: 20px;
 }
 #accordians{
-    grid-row: 3/span 2;
+    height: 700px;
 }
-.slider-zoom,#accordians,.container-banner-xs,#social,#kenaz-tv,#envato,.category,.slider-container{
+.slider-zoom,#accordians,#social,#kenaz-tv,#envato,.slider-container{
     border: solid #586666;
 }
 #kenaz-tv{
@@ -116,4 +194,115 @@ footer{
     margin-top: 20px;
     height: 992px;
     background-color: $footer-header-bg;
+    .pt-60{
+        padding-top: 60px;
+    }
+    .pb-60{
+        padding-bottom: 60px;
+    }
+    .container{
+        color: $text-light;
+        background-color: $footer-header-bg;
+        font-family: "Bitter";
+    }
+    div{
+        p,h2{
+            margin-bottom: 25px;
+        }
+    }
+    h2{
+        color: $text-footer;
+    }
+    .lorem-ipsum{
+        color: $text-date;
+        font-size: 14px;
+        //margin: 23px 0;
+    }
+    .logo{
+        align-items: center;
+        &-text{
+            margin-left: 15px;
+            font-size: 28px;
+            font-family: "Bitter";
+            color: $kenaz-logo;
+        }
+    }
+    .form-newsletter{
+        font-size: 16px;
+        input,input:active,input:focus,input:hover,input:valid, button{
+            padding: 20px;
+            border: none;
+            outline: none;
+            font-family: 'Varela Round';
+        }
+        input{
+            background-color: $footer-features-bg;
+            color: $text-light;
+        }
+        button{
+            background-color: $bg-categories;
+            color: $text-footer;
+            cursor: pointer;
+        }
+    }
+    .tag{
+        &-container{
+            width: 100px;
+            height: 300px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        &-item{
+            background-color: $footer-features-bg;
+            color: $text-date;
+            border: none;
+            padding: 6px 8px;
+            margin: 3px 1px;
+            margin-left: 0;
+            font-size: 12px;
+            font-family: 'Varela Round';
+            cursor: pointer;
+            &.active{
+                background-color: $bg-categories;
+                color: $text-footer;
+            }
+        }
+    }
+    .posts-footer{
+        h2{
+            color: $white;
+        }
+    }
+    .line{
+        border: $footer-features-bg solid 1px;
+    }
+    .bottom{
+        font-size: 12px;
+        font-family: 'Varela Round';
+        padding-top: 20px;
+        padding-bottom: 150px;//još provjeriti za padding-bottom
+        #year{
+            grid-column: 1/span 2;
+        }
+    }
+}
+//kategorije-boje
+.news{
+    border-color: $category-news;
+}
+.business{
+    border-color: $category-business;
+}
+.sport{
+    border-color: $category-sport;
+}
+.life{
+    border-color: $category-life;
+}
+.tech{
+    border-color: $category-tech;
+}
+.travel{
+    border-color: $category-travel;
 }

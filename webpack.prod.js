@@ -38,12 +38,20 @@ module.exports= {
                   filename: "imgs/[name][hash][ext]",
                 },
             },
+            {
+                test:/\.(ttf)$/i,
+                type: "asset/resource",
+                generator: {
+                  filename: "fonts/[name][ext]",
+                },
+            },
         ],
     },
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'src/template.html',
+            minify: false,
         }),
         new HtmlWebpackPlugin({
             template: "./src/single.html",
