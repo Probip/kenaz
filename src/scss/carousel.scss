@@ -45,6 +45,14 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
                 color: $text-carousel;
                 line-height: 14.45px;
             }
+            .comments{
+                display: inline-block;
+                img{
+                    display: inline;
+                    margin-left: 30px;
+                    margin-bottom: -3px;
+                }
+            }
             h1{
                 font-family: 'Bitter bold';
                 font-size: 34px;
