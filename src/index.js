@@ -13,6 +13,13 @@ $(document).ready(function(){
         autoplaySpeed: 4000,
         arrows: true,
        });
-     
+       /*
+       $('.prev').click(function(){
+        $('.slick-slider').slick('slickPrev');
+      })
+      
+      $('.next').click(function(){
+        $('.slick-slider').slick('slickNext');
+      })*/
     
 })
