@@ -14,6 +14,7 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
     grid-column: span 3;
     display: flex;
     position: relative;
+    //.slick-next::before,.slick-prev::before{background-color: red;}
     .slick-prev, .slick-next { 
         height: 55px; 
         width: 55px;
@@ -69,9 +70,60 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
                     text-decoration: none;
                     font-family: 'Varela Round';
                     font-size: 14px;
-                }
-                
+                } 
             }
         }
     }
+}
+.zoom-slider-container{
+    position: relative;
+    height: 400px;
+    grid-column:1/span 3;
+    padding: 0 20px;
+    background-color: #4b4b4b;
+    overflow: hidden;
+    .zoom-img{
+        position: absolute;
+        margin-left: -20px;
+        &-large{
+            z-index: 0;
+            padding-left: 0;
+            width: 100%;
+        }
+        &-gradient{
+            bottom: 0;
+            width: 100%;
+        }
+    }
+}
+.zoom-slider{
+    width: 100%;
+    height: 100%;
+    .slick-track{
+        margin-top: 260px;
+    }
+    .slick-slide{
+        margin-right: 10px;
+        padding-bottom: 20px;
+        img{
+            width: 100%;
+            height: 120px;
+            cursor: pointer;
+            opacity: 0.7;
+            &:hover{
+                opacity: 1;
+                outline: 4px solid $zoom-img-hover;
+            }
+            &.active{
+                border: 7px solid $zoom-img-active;
+                outline: 2px solid $zoom-img-active;
+                opacity: 1;
+                transition:ease-out 0.7s;
+                &:hover{
+                    outline: 2px solid $zoom-img-active;
+                }
+            }
+        }
+    }
+   
 }
