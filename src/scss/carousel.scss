@@ -7,6 +7,11 @@
     color: $text-date;
     margin-top: 5px;
 }
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 $slick-prev-character: url('../assets/Shape\ 1\ copy\ 2.png');
 $slick-next-character: url('../assets/Shape\ 1\ copy.png');
 .slick-slider{
@@ -82,13 +87,13 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
     padding: 0 20px;
     background-color: #4b4b4b;
     overflow: hidden;
+    @include flexCenter();
     .zoom-img{
         position: absolute;
-        margin-left: -20px;
         &-large{
             z-index: 0;
             padding-left: 0;
-            width: 100%;
+            height: 100%;
         }
         &-gradient{
             bottom: 0;

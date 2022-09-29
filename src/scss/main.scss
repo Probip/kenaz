@@ -168,15 +168,18 @@ a{
        grid-column: 1/-1; 
     };
   
-    .headline{
-        font-family: "Bitter bold";
-        font-size: 14px;
-        color: $text-dark;
-    }
+  
+}
+.headline{
+    font-family: "Bitter bold";
+    font-size: 14px;
+    color: $text-dark;
+}
+.date{
     @include date();
-    &.col-span-1{
-        grid-column:span 1;
-    }
+}
+.category.col-span-1{
+    grid-column:span 1;
 }
 .sidebar{
     grid-column: 3/ span 1;
@@ -187,17 +190,69 @@ a{
 #accordians{
     height: 700px;
 }
-.slider-zoom,#accordians,#social,#kenaz-tv,#envato{
+.slider-zoom,#accordians,#envato{
     border: solid #586666;
 }
 #kenaz-tv{
-    height: 325px;
+    //height: 325px;
+    background-color: $white;
+    padding-bottom: 25px;
+    h2{
+        margin-top: 15px;
+        margin-left: 30px;
+        margin-bottom: 30px;
+    }
+    .date{
+        margin-top: 17px;
+    }
+    .headline,.date{
+        margin-left: 30px;
+    }
 }
 #envato{
     height: 555px;
 }
 #social{
-    height: 185px;
+    //height: 200px;
+    padding-top: 10px;
+    h2{
+        margin-bottom: 15px;
+    }
+    .social-media{
+        height: 40px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        img{
+            width: 40px;
+            background-color: $white;
+        }
+        &-btn{
+            cursor: pointer;
+            border: none;
+            width: 120px;
+            background-color: $bg-banner-container;
+            padding-left: 15px;
+            text-align: left;
+            a{
+                text-decoration: none;
+                font-family: 'Bitter Bold';
+                font-size: 18px;
+                line-height: 18px;
+                color: $text-dark;
+            }
+        }
+        .fans{
+           @include flexCenter();
+            width: 140px;
+            color: $white;
+            background-color: $bg-categories;
+            font-family: 'Varela Round';
+            font-size: 14px;
+            line-height: 16.86px;
+        }
+    }
+
 }
 
 footer{
@@ -219,6 +274,9 @@ footer{
         width: 35px;
         height: 35px;
         margin-right: 10px;
+        &.special{
+            background-color: $white;
+        }
     }
     div{
         p,h2{
