@@ -60,7 +60,6 @@ body{
 .container{
     width: 940px;
     display: grid;
-    //grid-template-rows: 50px 50px auto;
     gap: 20px;
     grid-template-columns: repeat(3,1fr);
     margin: 0 auto;
@@ -137,6 +136,7 @@ a{
     background-color: $white;
     border-left: 10px solid;
     padding: 30px;
+    padding-top: 0;
     display: grid;
     row-gap: 30px;
     &.sport,&.news{
@@ -165,7 +165,11 @@ a{
         }
     }
     .top{
-       grid-column: 1/-1; 
+       grid-column: 1/-1;
+       padding-top: 30px;
+       h2{
+        margin-top: -10px;
+       }
     };
   
   
@@ -184,11 +188,12 @@ a{
 .sidebar{
     grid-column: 3/ span 1;
     grid-row: 3/span 7;
+    //grid-row: 3/-1;
     display: grid;
     row-gap: 20px;
 }
 #accordians{
-    height: 700px;
+    height: 665px;
 }
 .slider-zoom,#accordians,#envato{
     border: solid #586666;
@@ -223,6 +228,9 @@ a{
         margin-bottom: 10px;
         display: flex;
         flex-wrap: nowrap;
+        &:last-of-type{
+            margin-bottom: 0;
+        }
         img{
             width: 40px;
             background-color: $white;
@@ -257,7 +265,8 @@ a{
 
 footer{
     margin-top: 20px;
-    height: 992px;
+    height: 992px;//ovo je prava visina
+    height: 1192px;//maknuti ovu visinu
     background-color: $footer-header-bg;
     .pt-60{
         padding-top: 60px;
@@ -357,7 +366,7 @@ footer{
         font-size: 12px;
         font-family: 'Varela Round';
         padding-top: 20px;
-        padding-bottom: 150px;//još provjeriti za padding-bottom
+        margin-bottom: 100px;//još provjeriti za padding-bottom
         #year{
             grid-column: 1/span 2;
         }

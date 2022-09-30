@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenaz</title>
-<script defer src="js/bundleb97e8c03910fecec2b13.js"></script><link href="main.e83877da55f2aa318aec.css" rel="stylesheet"></head>
+<script defer src="js/bundle27f836b14ea808da47cd.js"></script><link href="main.8f31343569f42eb73806.css" rel="stylesheet"></head>
 <body>
     <header class="header">
         <div class="container">
@@ -27,7 +27,7 @@
         <div class="container">
             <nav>
                 <ul>
-                    <li class="border-bottom news"><a href="#">NEWS</a></li>
+                    <li class="border-bottom news active"><a href="#">NEWS</a></li>
                     <li class="border-bottom business"><a href="#">BUSINESS</a></li>
                     <li class="border-bottom sport"><a href="#">SPORT</a></li>
                     <li class="border-bottom life"><a href="#">LIFE </a></li>
@@ -39,20 +39,21 @@
     </div>
     <div class="container">
         <div class="banner banner-lg">banner</div>
-        <div class="slick-slider">
+        <div class="slick-slider slider1">
             <div class="single-item element-1">
                 <div class="carousel-text">
-                    <p class="date">August 26, 2013</p>
+                    <p class="date">August 26, 2013 <span class="comments"><img src="imgs/comment ico78ed5b83cf1a9a943bfe.svg" alt="comment icon" /> 22 Comments</span></p>
                     <h1>'Margot' breathlessly reimagines Anne Frank's sister</h1>
                     <button class="btn-article"><a href="./single.html">Read article</a></button>
                 </div>
                 <img src="imgs/Layer 48f291db392ea0c4d8cef4.png" alt="slika">
-               
             </div>
             <div class="single-item element-2">
                 <img src="imgs/Layer 48f291db392ea0c4d8cef4.png" alt="slika">
             </div>
-            <div class="single-item element-3">3</div>
+            <div class="single-item element-3">
+                <img src="imgs/Layer 48f291db392ea0c4d8cef4.png" alt="slika">
+            </div>
         </div>
         <div class="category news">
             <div class="row space-between top">
@@ -184,8 +185,30 @@
         
         <div class="sidebar" >
             <div id="accordians">sidebar</div>
-            <div id="social">social</div>
-            <div id="kenaz-tv">Kenaz TV</div>
+            <div id="social">
+                <h2>Social</h2>
+                <div class="social-media">
+                    <img src="imgs/Facebook5a39c15ac01d10a88c6a.svg" alt="Facebook"/>
+                    <button class="social-media-btn"><a>Like</a></button>
+                    <p class="fans">25041 Fans</p>
+                </div>
+                <div class="social-media">
+                    <img src="imgs/twitter526a4af62734e4eb732a.svg" alt="twitter"/>
+                    <button class="social-media-btn"><a>Follow</a></button>
+                    <p class="fans">25041 Followers</p>
+                </div>
+                <div class="social-media">
+                    <img src="imgs/You tube4a1a5cc78eccfccbf1df.svg" alt="Youtube"/>
+                    <button class="social-media-btn"><a>Subscribe</a></button>
+                    <p class="fans">941 Subscribers</p>
+                </div>
+            </div>
+            <div id="kenaz-tv">
+                <h2>Kenaz TV</h2>
+                <iframe width="300" height="150" src="https://www.youtube.com/embed/l-epKcOA7RQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="date">August 26, 2013</p>
+                <p class="headline">NASA releases portrait of a planetwaving at Saturn</p>
+            </div>
             <div class="container-banner-xs">
                 <div class="banner banner-xs">banner</div>
                 <div class="banner banner-xs">banner</div>
@@ -194,7 +217,20 @@
         </div>
 
         <div class="banner banner-lg">banner</div>
-        <div class="slider-zoom">slider</div>
+        <div class="zoom-slider-container">
+            <img src="imgs/Layer 36c82beac17d1860eed34a.png" alt="" class="zoom-img zoom-img-large"/>
+            <img src="imgs/Layer 389f3f2856bc6f0e197e76.png" alt="" class="zoom-img zoom-img-gradient"/>
+        <div class="zoom-slider slick-slider">
+            <img src="imgs/Layer 371b82684eefe2fe89bf19.png" alt="slika zoom slider 1" class="zoom-slider-img active"/>
+            <img src="imgs/Layer 39cbf06c3d1d2c21255161.png" alt="slika zoom slider 1" class="zoom-slider-img" />
+            <img src="imgs/Layer 40393bf206c418b361adfe.png" alt="slika zoom slider 1" class="zoom-slider-img"/>
+            <img src="imgs/Layer 4123304e8a4f9fcfd9bf38.png" alt="slika zoom slider 1" class="zoom-slider-img"/>
+            <img src="imgs/Layer 42cd55e102727b21f5cce1.png" alt="slika zoom slider 1" class="zoom-slider-img"/>
+            <img src="imgs/Layer 4320bb9e287676a3767deb.png" alt="slika zoom slider 1" class="zoom-slider-img"/>
+            <img src="imgs/Layer 4401c47f13ba3a17332018.png" alt="slika zoom slider 1" class="zoom-slider-img"/>
+            <img src="imgs/Layer 36c82beac17d1860eed34a.png" alt="slika zoom slider 1" class="zoom-slider-img"/>
+        </div>
+        </div>
     </div>
     <footer>
         <div class="purple"></div>
@@ -207,25 +243,25 @@
                 <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus leo ante.</p>
                 <div class="row icons">
                    <a href="#"><img src="imgs/Rss21fd04cae5f89456dae5.svg" alt="Rss" /></a> 
-                   <a href="#"><img src="imgs/Facebooke52d13d508954514c392.svg" alt="Facebook" /></a> 
-                   <a href="#"><img src="imgs/twitter2086ef8d45e83bc21d3a.svg" alt="Twitter" /></a> 
+                   <a href="#"><img src="imgs/Facebook5a39c15ac01d10a88c6a.svg" alt="Facebook" class="special"/></a> 
+                   <a href="#"><img src="imgs/twitter526a4af62734e4eb732a.svg" alt="Twitter" class="special" /></a> 
                    <a href="#"><img src="imgs/dribble5800065badc8f53cac06.svg" alt="Dribble" /></a> 
                    <a href="#"><img src="imgs/Linkedinf67c18c35c594f423a45.svg" alt="Linkedin" /></a> 
-                   <a href="#"><img src="imgs/You tube119475c4353324172be5.svg" alt="Youtube" /></a> 
+                   <a href="#"><img src="imgs/You tube4a1a5cc78eccfccbf1df.svg" alt="Youtube"  class="special"/></a> 
                    <a href="#"><img src="imgs/Skype354ba05591a57df1ea04.svg" alt="Skype" /></a> 
                 </div>
             </div>
-            <div>
+            <div class="newsletter">
                 <h2>Newsletter</h2>
-                <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus leo ante.</p>
+                <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus leo ante...</p>
                 <form action="" method="POST" class="form-newsletter row">
                     <input type="email" name="email" id="email" placeholder="Your mail" />
-                    <button type="submit">Submit</button>
+                    <button type="submit">Subscribe</button>
                 </form>
             </div>
             <div>
                 <h2>Tags Widget</h2>
-                <div class="tag-containter">
+                <div class="tag-container">
                     <button class="tag-item">assueverit</button>
                     <button class="tag-item">utroquoe</button>
                     <button class="tag-item">probo</button>
@@ -243,7 +279,10 @@
             </div>
             <div class="posts-footer pt-60"><h2>Featured</h2></div>
             <div class="posts-footer pt-60"><h2>Random Posts</h2></div>
-            <div class="posts-footer pt-60"><h2>Twitter Feed</h2></div>
+            <div class="posts-footer pt-60">
+                <h2>Twitter Feed</h2>
+                <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">What is <a href="https://twitter.com/hashtag/BrandActivism?src=hash&amp;ref_src=twsrc%5Etfw">#BrandActivism</a>?<br><br>We talked to six incredible brands about how they&#39;re making a positive impact on social media. <br><br>Here&#39;s their best advice for creating &#39;content for good&#39;: <a href="https://t.co/mcfae9N2QE">https://t.co/mcfae9N2QE</a> <a href="https://t.co/R8TXqmweit">pic.twitter.com/R8TXqmweit</a></p>&mdash; Envato (@envato) <a href="https://twitter.com/envato/status/1575086428106723330?ref_src=twsrc%5Etfw">September 28, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
         </div>
         <hr class="line" />
         <div class="container bottom">
