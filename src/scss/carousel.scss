@@ -123,7 +123,7 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
                 border: 7px solid $zoom-img-active;
                 outline: 2px solid $zoom-img-active;
                 opacity: 1;
-                transition:ease-out 0.7s;
+                transition:ease-out 0.5s;
                 &:hover{
                     outline: 2px solid $zoom-img-active;
                 }
