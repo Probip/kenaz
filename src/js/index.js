@@ -1,8 +1,8 @@
-//import '../scss/main.scss';
 import 'jquery';
 import { event } from 'jquery';
+//import 'jquery-zoom';
+import '@zeitiger/elevatezoom';
 require('slick-carousel');
-import './file.js';
 
 $(document).ready(function(){
     $(".slick-slider.slider1").slick({
@@ -26,16 +26,20 @@ $(document).ready(function(){
         $(".zoom-slider").find('img.active').removeClass('active');
         const activeImg=$(e.target).attr('src');//ime slike na koju je korisnik kliknuo
         $(".zoom-slider img").each(($i,$img)=>{
-            /*slike se pojavljuju više puta u slideru
-            treba svakoj slici koja ima isti src tj. naziv dodijeliti klasu active */
+            /*slike se pojavljuju više puta u slideru, treba svakoj slici koja ima isti src tj. naziv dodijeliti klasu active */
             if($img.getAttribute('src')==activeImg){
                 $img.classList.add('active');
             }
         })
     });
+    $('.zoom-slider-container .photo').zoom({url: '../assets/Layer\ 36.png'});
+    $('.zoom-slider-container').click(()=>{
+        console.log('klik na zoom sliku');
+    });
     $(".zoom-slider-container").bind('mousemove',function(e){ 
         console.log("e.pageX: "+e.pageX + ", e.pageY: " + e.pageY); 
     });
+   
     $(".tag-item").click((e)=>{
         $(".tag-container").find('button.tag-item.active').removeClass('active');
         $(e.target).addClass('active');
