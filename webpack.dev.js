@@ -67,5 +67,11 @@ module.exports= {
             $: 'jquery',
             jQuery: 'jquery',
         }),
+        new webpack.ProvidePlugin({
+            'jquery-zoom':'jquery-zoom',
+        }),
     ],
+    externals: {
+        zoom: 'jquery-zoom',
+    }
 };

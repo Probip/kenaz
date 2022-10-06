@@ -1,6 +1,7 @@
 import 'jquery';
 import { event } from 'jquery';
-//import 'jquery-zoom';
+//import 'zoom';
+//import zoom from 'jquery-zoom';
 import '@zeitiger/elevatezoom';
 require('slick-carousel');
 
@@ -33,6 +34,7 @@ $(document).ready(function(){
         })
     });
     $('.zoom-slider-container .photo').zoom({url: '../assets/Layer\ 36.png'});
+    $('#test').zoom();
     $('.zoom-slider-container').click(()=>{
         console.log('klik na zoom sliku');
     });
