@@ -33,6 +33,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@zeitiger/elevatezoom": "^2.5.4"
+    "@zeitiger/elevatezoom": "^2.5.4",
+    "webpack-hashed-module-id-plugin": "^0.1.4"
   }
 }

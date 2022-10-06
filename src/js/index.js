@@ -3,7 +3,6 @@ import { event } from 'jquery';
 //import 'zoom';
 //import zoom from 'jquery-zoom';
 import '@zeitiger/elevatezoom';
-//import { ids } from 'webpack';
 require('slick-carousel');
 
 $(document).ready(function(){
