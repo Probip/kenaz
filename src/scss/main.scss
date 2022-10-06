@@ -196,11 +196,79 @@ a{
     &-category{
         grid-row: 3/span 1;
     }
+    .tabs{
+        height: 665px;
+        position: relative;
+        background-color: $bg-categories;
+        padding-bottom: 40px;
+        &-list{
+            height: 50px;
+            background-color: $bg-categories-dark;
+            justify-content: space-around;
+            display: flex;
+            li{
+                text-decoration: underline;
+                color: $white;
+                font-family: 'Varela Round';
+                font-size: 14px;
+                line-height: 16.68px;
+                cursor: pointer;
+                padding: 0 5px;
+                z-index: 5;
+                &.active{
+                    color: $text-tab-active;
+                }
+            }
+        }
+        &-content{
+            background-color: $bg-categories;
+            position: absolute;
+            &.active{
+                z-index: 2;
+            }
+            &#tab-2{
+                background-color: #435282;
+            }
+            &#tab-3{
+                background-color: #754382;
+            }
+            &-item{
+                //height: 105px;
+                z-index: 1;
+                padding: 20px 30px;
+                .comments{
+                    color: $text-tab-date;
+                    text-align: end;
+                    padding-right: 30px;
+                    img{
+                        width: 11px;
+                        height: 10px;
+                        outline: none;
+                    }
+                }
+                .date{
+                    color:$text-tab-date;
+                }
+                p{
+                    color: $white;
+                }
+                img{
+                    width: 70px;
+                    height: 70px;
+                    outline: $white 2px solid;
+                    margin-left: 4px;
+                }
+                &:hover{
+                    background-color: $bg-categories-dark;
+                }
+            }
+        }
+        .line{
+            border: $bg-categories-dark 1px solid;
+        }
+    }
 }
-#accordians{
-    height: 665px;
-}
-#accordians,#envato{
+#envato{
     border: solid #586666;
 }
 #kenaz-tv{

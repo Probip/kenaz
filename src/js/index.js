@@ -3,6 +3,7 @@ import { event } from 'jquery';
 //import 'zoom';
 //import zoom from 'jquery-zoom';
 import '@zeitiger/elevatezoom';
+//import { ids } from 'webpack';
 require('slick-carousel');
 
 $(document).ready(function(){
@@ -33,8 +34,8 @@ $(document).ready(function(){
             }
         })
     });
-    $('.zoom-slider-container .photo').zoom({url: '../assets/Layer\ 36.png'});
-    $('#test').zoom();
+    //$('.zoom-slider-container .photo').zoom({url: '../assets/Layer\ 36.png'});
+   // $('#test').zoom();
     $('.zoom-slider-container').click(()=>{
         console.log('klik na zoom sliku');
     });
@@ -47,5 +48,21 @@ $(document).ready(function(){
         $(e.target).addClass('active');
         //ako više tagova može biti aktivno u isto vrijeme (umjesto linija 41 i 42):
         //$(e.target).toggleClass('active');
-    });  
+    });
+    var activeTab;
+    $('.tabs-list li').click((e)=>{
+        //console.log(e.target);
+        var br=1;
+        $('.tabs-list').find('li.active').removeClass('active');
+        $('.tabs-list li').each(($i,$li)=>{
+            if($li==e.target){
+                e.target.classList.add('active');
+                activeTab="#tab-"+br;
+                console.log(activeTab);
+                $('.tabs-content').removeClass('active');
+                $(activeTab).addClass('active');
+            }
+            br++;
+        });
+    });
 })
