@@ -56,6 +56,9 @@ body{
 .space-between{
     justify-content: space-between;
 }
+.space-around{
+    justify-content: space-around;
+}
 //visina malih bannera u sidebaru?
 .container{
     width: 940px;
@@ -143,6 +146,10 @@ a{
         grid-template-columns: repeat(3,1fr);
         column-gap: 20px;
     }
+    &.sport.row,&.news.row{
+        
+        padding-right: 30px;
+    }
     &.business{
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: auto 90px 90px;
@@ -172,8 +179,6 @@ a{
         //padding-bottom: 20px;
        }
     };
-  
-  
 }
 .headline{
     font-family: "Bitter bold";
@@ -269,10 +274,12 @@ a{
     }
 }
 #envato{
-    border: solid #586666;
+    //border: solid #586666;
+    height: 555px;
+    padding: 20px;
+    background-color: $white;
 }
 #kenaz-tv{
-    //height: 325px;
     background-color: $white;
     padding-bottom: 25px;
     h2{
@@ -287,11 +294,8 @@ a{
         margin-left: 30px;
     }
 }
-#envato{
-    height: 555px;
-}
+
 #social{
-    //height: 200px;
     h2{
         margin-bottom: 15px;
     }

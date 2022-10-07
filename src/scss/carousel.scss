@@ -34,14 +34,17 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
     .single-item{
         width:100%;
         display: inline-block;
-        img{
+        position: relative;
+        .img-slick-slider{
            display: flex;
+           width: 100%;
         }
         .carousel-text{
             padding: 30px;
             padding-right: 15px;
             padding-top: 55px;
             height: 240px;
+            width: 100%;
             background-image: url('/src/assets/gradient.png');
             position: absolute;
             bottom: 0;
@@ -63,7 +66,7 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
                 font-family: 'Bitter bold';
                 font-size: 34px;
                 line-height: 40.8px;
-                width: 70%;
+                width: 600px;
             }
             .btn-article{
                 padding: 8px 20px;
@@ -84,8 +87,23 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
     position: relative;
     height: 400px;
     grid-column:1/span 3;
+    background-color: rgba($color: #252525, $alpha: 0.4);
+    background-repeat: no-repeat;
+    background-size: 180%;
+    background-position: 50% 50%;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    transition-timing-function: ease-in;
+    &:hover{
+        //background-image: url('../assets/img-1.jpg');
+        //background-image: url('../assets/Layer\ 36.png');
+        .zoom-img-lg{
+            opacity: 0;
+            transition: 0.3s ease-in-out;
+        }
+    }
     //background-color: #4b4b4b;
-    //overflow: hidden;
+    overflow: hidden;
     @include flexCenter();
     .slick-slider{
         padding: 0 20px;
@@ -101,7 +119,7 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
     }
     .zoom-img{
         position: absolute;
-        &-large{
+        &-lg{
             z-index: 0;
             padding-left: 0;
             height: 100%;
