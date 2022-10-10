@@ -1,0 +1,140 @@
+@import './mixins';
+@import './var';
+.sidebar{
+    grid-column: 3/ span 1;
+    grid-row: 3/span 7;
+    //grid-row: 3/-1;
+    display: grid;
+    row-gap: 20px;
+    grid-auto-rows: min-content;
+    &-category{
+        grid-row: 3/span 1;
+    }
+    .tabs{
+        height: 665px;
+        position: relative;
+        background-color: $bg-categories;
+        padding-bottom: 40px;
+        &-list{
+            height: 50px;
+            background-color: $bg-categories-dark;
+            justify-content: space-around;
+            display: flex;
+            li{
+                text-decoration: underline;
+                color: $white;
+                font-family: 'Varela Round';
+                font-size: 14px;
+                line-height: 16.68px;
+                cursor: pointer;
+                padding: 0 5px;
+                z-index: 5;
+                &.active{
+                    color: $text-tab-active;
+                }
+            }
+        }
+        &-content{
+            background-color: $bg-categories;
+            position: absolute;
+            &.active{
+                z-index: 2;
+            }
+            &#tab-2{
+                background-color: #435282;
+            }
+            &#tab-3{
+                background-color: #754382;
+            }
+            &-item{
+                z-index: 1;
+                padding: 20px 30px;
+                .comments{
+                    color: $text-tab-date;
+                    text-align: end;
+                    padding-right: 30px;
+                    img{
+                        width: 11px;
+                        height: 10px;
+                        outline: none;
+                    }
+                }
+                .date{
+                    color:$text-tab-date;
+                }
+                p{
+                    color: $white;
+                }
+                img{
+                    width: 70px;
+                    height: 70px;
+                    outline: $white 2px solid;
+                    margin-left: 4px;
+                }
+                &:hover{
+                    background-color: $bg-categories-dark;
+                }
+            }
+        }
+        .line{
+            border: $bg-categories-dark 1px solid;
+        }
+    }
+    .social{
+        h2{
+            margin-bottom: 15px;
+        }
+        .social-media{
+            height: 40px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-wrap: nowrap;
+            &:last-of-type{
+                margin-bottom: 0;
+            }
+            img{
+                width: 40px;
+                background-color: $white;
+            }
+            &-btn{
+                cursor: pointer;
+                border: none;
+                width: 120px;
+                background-color: $bg-banner-container;
+                padding-left: 15px;
+                text-align: left;
+                a{
+                    text-decoration: none;
+                    font-family: 'Bitter Bold';
+                    font-size: 18px;
+                    line-height: 18px;
+                    color: $text-dark;
+                }
+            }
+            .fans{
+            @include flexCenter();
+                width: 140px;
+                color: $white;
+                background-color: $bg-categories;
+                font-family: 'Varela Round';
+                font-size: 14px;
+                line-height: 16.86px;
+            }
+        }
+    }
+    .kenaz-tv{
+        background-color: $white;
+        padding-bottom: 25px;
+        h2{
+            margin-top: 15px;
+            margin-left: 30px;
+            margin-bottom: 30px;
+        }
+        .date{
+            margin-top: 17px;
+        }
+        .headline,.date{
+            margin-left: 30px;
+        }
+    }
+}

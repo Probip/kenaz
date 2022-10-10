@@ -1,9 +1,17 @@
 @import './var.scss';
+@import './mixins.scss';
 @import './header.scss';
+@import './footer.scss';
 @import './carousel.scss';
+@import './banner';
+@import './sidebar';
+@import './main_class_and_category_html';
+@import './single_html';
+@import './category';
 @import './slickfix';
 @import '~slick-carousel/slick/slick';
 @import '~slick-carousel/slick/slick-theme';
+
 @font-face {
     font-family: "Bitter";
     src: url(../fonts/Bitter-Regular.ttf);
@@ -22,21 +30,7 @@
     font-style: italic;
     src: url(../fonts/Bitter-Italic.ttf);
 }
-@mixin flexCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-@mixin date {
-    font-family: "Varela Round";
-    font-size: 12px;
-    color: $text-date;
-    margin-top: 5px;
-}
-@mixin purpleHover{
-    background-color: $footer-header-purple-bg-hover;
-    transition: 0.5s ease-in;
-}
+
 *{
     padding: 0;
     margin: 0;
@@ -59,7 +53,6 @@ body{
 .space-around{
     justify-content: space-around;
 }
-//visina malih bannera u sidebaru?
 .container{
     width: 940px;
     display: grid;
@@ -68,7 +61,6 @@ body{
     margin: 0 auto;
     font-family: "Varela Round";
 }
-
 .purple{
     height: 20px;
     background-color: $bg-categories;
@@ -92,36 +84,6 @@ ul{
         background-color: $category-news;
     }
 }
-.banner{
-    border: solid $border-color 1px;
-    color: $text-light;
-    height: 120px;
-    background-color: $white;
-    font-family: "Varela Round";
-    font-size: 14px;
-    @include flexCenter();
-    &-lg{
-        grid-column: span 3;
-    }
-    &-md{
-        grid-column: span 2;
-    }
-    &-sm{
-        grid-column: span 1;
-    }
-    &-xs{
-       width: 120px;
-       height: 120px;
-    }
-}
-.container-banner-xs{
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    padding: 20px;
-    background-color: $bg-banner-container;
-}
-
 h2{
     font-family: "Bitter bold";
     font-size: 24px;
@@ -133,53 +95,6 @@ a{
     font-size: 14px;
 }
 
-.category{
-    grid-column: 1/ span 2;
-    //grid-column-start: 1;
-    background-color: $white;
-    border-left: 10px solid;
-    padding: 30px;
-    padding-top: 0;
-    display: grid;
-    row-gap: 30px;
-    &.sport,&.news{
-        grid-template-columns: repeat(3,1fr);
-        column-gap: 20px;
-    }
-    &.sport.row,&.news.row{
-        
-        padding-right: 30px;
-    }
-    &.business{
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: auto 90px 90px;
-        div{
-            margin-left: 15px;
-        }
-    }
-    &.tech{
-        grid-template-columns: repeat(2,1fr);
-        column-gap: 20px;
-    }
-    &.tech,&.travel{
-        .icon{
-            width: 16px;
-            height: 22px;
-            margin-left: 14px;
-        }
-        .column img{
-            height: 150px;
-        }
-    }
-    .top{
-       grid-column: 1/-1;
-       padding-top: 30px;
-       h2{
-        margin-top: -10px;
-        //padding-bottom: 20px;
-       }
-    };
-}
 .headline{
     font-family: "Bitter bold";
     font-size: 14px;
@@ -191,454 +106,6 @@ a{
 .category.col-span-1{
     grid-column:span 1;
 }
-.sidebar{
-    grid-column: 3/ span 1;
-    grid-row: 3/span 7;
-    //grid-row: 3/-1;
-    display: grid;
-    row-gap: 20px;
-    grid-auto-rows: min-content;
-    &-category{
-        grid-row: 3/span 1;
-    }
-    .tabs{
-        height: 665px;
-        position: relative;
-        background-color: $bg-categories;
-        padding-bottom: 40px;
-        &-list{
-            height: 50px;
-            background-color: $bg-categories-dark;
-            justify-content: space-around;
-            display: flex;
-            li{
-                text-decoration: underline;
-                color: $white;
-                font-family: 'Varela Round';
-                font-size: 14px;
-                line-height: 16.68px;
-                cursor: pointer;
-                padding: 0 5px;
-                z-index: 5;
-                &.active{
-                    color: $text-tab-active;
-                }
-            }
-        }
-        &-content{
-            background-color: $bg-categories;
-            position: absolute;
-            &.active{
-                z-index: 2;
-            }
-            &#tab-2{
-                background-color: #435282;
-            }
-            &#tab-3{
-                background-color: #754382;
-            }
-            &-item{
-                //height: 105px;
-                z-index: 1;
-                padding: 20px 30px;
-                .comments{
-                    color: $text-tab-date;
-                    text-align: end;
-                    padding-right: 30px;
-                    img{
-                        width: 11px;
-                        height: 10px;
-                        outline: none;
-                    }
-                }
-                .date{
-                    color:$text-tab-date;
-                }
-                p{
-                    color: $white;
-                }
-                img{
-                    width: 70px;
-                    height: 70px;
-                    outline: $white 2px solid;
-                    margin-left: 4px;
-                }
-                &:hover{
-                    background-color: $bg-categories-dark;
-                }
-            }
-        }
-        .line{
-            border: $bg-categories-dark 1px solid;
-        }
-    }
-}
-#envato{
-    //border: solid #586666;
-    height: 555px;
-    padding: 20px;
-    background-color: $white;
-}
-#kenaz-tv{
-    background-color: $white;
-    padding-bottom: 25px;
-    h2{
-        margin-top: 15px;
-        margin-left: 30px;
-        margin-bottom: 30px;
-    }
-    .date{
-        margin-top: 17px;
-    }
-    .headline,.date{
-        margin-left: 30px;
-    }
-}
-
-#social{
-    h2{
-        margin-bottom: 15px;
-    }
-    .social-media{
-        height: 40px;
-        margin-bottom: 10px;
-        display: flex;
-        flex-wrap: nowrap;
-        &:last-of-type{
-            margin-bottom: 0;
-        }
-        img{
-            width: 40px;
-            background-color: $white;
-        }
-        &-btn{
-            cursor: pointer;
-            border: none;
-            width: 120px;
-            background-color: $bg-banner-container;
-            padding-left: 15px;
-            text-align: left;
-            a{
-                text-decoration: none;
-                font-family: 'Bitter Bold';
-                font-size: 18px;
-                line-height: 18px;
-                color: $text-dark;
-            }
-        }
-        .fans{
-           @include flexCenter();
-            width: 140px;
-            color: $white;
-            background-color: $bg-categories;
-            font-family: 'Varela Round';
-            font-size: 14px;
-            line-height: 16.86px;
-        }
-    }
-
-}
-
-footer{
-    margin-top: 20px;
-    height: 992px;
-    background-color: $footer-header-bg;
-    .pt-60{
-        padding-top: 60px;
-    }
-    .pb-60{
-        padding-bottom: 60px;
-    }
-    .container{
-        color: $text-light;
-        background-color: $footer-header-bg;
-        font-family: "Bitter";
-    }
-    .icons img{
-        width: 35px;
-        height: 35px;
-        margin-right: 10px;
-        &.special{
-            background-color: $white;
-        }
-    }
-    div{
-        p,h2{
-            margin-bottom: 30px;
-        }
-    }
-    h2{
-        color: $text-footer;
-    }
-    .lorem-ipsum{
-        color: $text-date;
-        font-size: 14px;
-        margin-top: 20px;
-    }
-    .logo{
-        &-text{
-            font-size: 28px;
-            font-family: "Bitter";
-            color: $kenaz-logo;
-            margin:auto 15px;
-        }
-    }
-    .form-newsletter{
-        font-size: 16px;
-        input,input:active,input:focus,input:hover,input:valid, button{
-            padding: 20px;
-            border: none;
-            outline: none;
-            font-family: 'Varela Round';
-        }
-        input{
-            background-color: $footer-features-bg;
-            color: $text-light;
-        }
-        button{
-            width: 112px;
-            background-color: $bg-categories;
-            color: $text-footer;
-            cursor: pointer;
-            &:hover{
-                @include purpleHover();
-            }
-        }
-    }
-    .tag{
-        &-item{
-            background-color: $footer-features-bg;
-            color: $text-date;
-            border: none;
-            padding: 6px 8px;
-            margin: 3px 1px;
-            margin-left: 0;
-            font-size: 12px;
-            font-family: 'Varela Round';
-            cursor: pointer;
-            &:hover{
-                background-color: $footer-features-bg-hover;
-                transition: 0.5s ease-in;
-            }
-            &.active{
-                background-color: $bg-categories;
-                color: $text-footer;
-                &:hover{
-                    @include purpleHover();
-                }
-            }
-        }
-    }
-    .posts-footer{
-        h2{
-            color: $white;
-        }
-        img{
-            width: 70px;
-            height: 70px;
-            outline: $white 2px solid;
-            box-shadow: 0px 3px 1px rgba(0, 0, 1, 0.3);
-            margin-left: 30px;
-            margin-bottom: 20px;
-        }
-        .headline{
-            color: $text-footer;
-        }
-        .date{
-            margin: 0;
-        }
-        .line{
-            margin-bottom: 20px;
-        }
-    }
-    .line{
-        border: $footer-features-bg solid 1px;
-    }
-    .bottom{
-        font-size: 12px;
-        font-family: 'Varela Round';
-        padding-top: 20px;
-        margin-bottom: 100px;//još provjeriti za padding-bottom
-        #year{
-            grid-column: 1/span 2;
-        }
-    }
-}
-//kategorije-boje
-.news{
-    border-color: $category-news;
-}
-.business{
-    border-color: $category-business;
-}
-.sport{
-    border-color: $category-sport;
-}
-.life{
-    border-color: $category-life;
-}
-.tech{
-    border-color: $category-tech;
-}
-.travel{
-    border-color: $category-travel;
-}
-/*category.html*/
-
-.main{
-    grid-column: 1/ span 2;
-    grid-template-columns: repeat(2,1fr);
-    background-color: $white;
-    padding-top: 0;
-    display: grid;
-    row-gap: 20px;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    .news-list-item{
-        grid-column: 1/-1;
-        padding: 0 30px;
-        h2:first-of-type{
-            margin: 15px 0;
-        }
-        h2{
-            margin-top: 25px;
-        }
-        .date{
-            margin:15px 30px 15px 0;
-            &:first-of-type{
-                margin-top: 1px;
-            }
-            img{
-                margin-right: 4px;
-            }
-        }
-        .row-grid{   
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            p{
-                grid-column: 2/span 2;
-                color: $text-news-p;
-                font-family: 'Bitter';
-                font-size: 14px;
-                line-height: 22px;
-            }
-            .btn-news{
-                grid-column-start:2;
-                background-color: $bg-categories;
-                color: $white;
-                border: none;
-                padding: 8px 20px;
-                margin-top: 20px;
-                margin-bottom: 65px;
-                width: 120px;
-                font-family: 'Varela Round';
-                font-size: 14px;
-                line-height: 16.86px;
-                cursor: pointer;
-            }
-        }
-    }
-    .line{
-        margin: 0;
-        border: $bg-banner-container solid 1px;
-        grid-column: 1/-1;
-    }
-    .page-number{
-        height: 95px;
-        display: flex;
-        align-items: center;
-        padding-left: 30px;
-        margin-top: -20px;
-        .number{
-            width: 30px;
-            height: 30px;
-            @include flexCenter();
-            background-color: $bg-banner-container;
-            color: $bg-categories;
-            margin-right: 5px;
-            cursor: pointer;
-            &.active{
-                background-color: $bg-categories;
-                color: $white;
-            }
-        }
-    }
-}
-.headline-img-container{
-    grid-column: 1/-1;
-    position: relative;
-    .bottom-container{
-        position: absolute;
-        background-image: url('../assets/Layer\ 66.png');
-        background-repeat: no-repeat;
-        bottom: 0;
-        .text{
-            position: absolute;
-            bottom: 35px;
-            left: 30px;
-            h2{
-                font-family: 'Bitter Bold';
-                font-size: 44px;
-                line-height: 52.8px;
-                margin-top: 30px;
-            }
-            h2,p{
-                color: $text-single-headline;
-            }
-        }
-    }
-}
-//single.html
-.main.single{
-    display: grid;
-    row-gap: 20px;
-    padding: 20px 0;
-    background-color: $bg-body;
-    .news-list-item{
-        background-color: $white;
-    }
-    p{
-        grid-column: 1/span 2;
-        padding: 37px 24px 43px 30px;
-        margin-right: 20px;
-        color: $text-news-p;
-        font-family: 'Bitter';
-        font-size: 14px;
-        line-height: 22px;
-    }
-    .social-media-interactions-container{
-        height: 42px;
-        align-items: center;
-        padding-left: 30px;
-        //border: blue solid 2px;
-        margin-bottom: 20px;
-    }
-    .news-list-item{
-        grid-column: 1/-1;
-        padding: 0;
-        h2{
-            margin-left: 30px;
-            margin-bottom: 30px;
-        }
-    }
-    .row img{
-        width: 110px;
-        height: 110px;
-    }
-    .row{
-        padding-left: 30px;
-        p{
-            margin-top: -40px;
-        }
-    }
-    .comments{
-        height: 1015px;
-    }
-}
-
-
-
-
 
 /*test slika za jquery-zoom*/
 #test {

@@ -3,6 +3,7 @@ const common=require("./webpack.common");
 const webpack=require('webpack');
 //const {merge}=require("./webpack-merge");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+//const HashedModuleIdsPlugin = require("webpack-hashed-module-id-plugin");
 
 module.exports= {
     //entry:path.resolve(__dirname,'src/js/index.js'),
@@ -33,8 +34,7 @@ module.exports= {
                 test:/\.(svg|png|jpg|gif)$/i,
                 type: "asset/resource",
                 generator: {
-                  //filename: "imgs/[name][hash][ext]",
-                  filename: "imgs/[name][ext]",
+                  filename: "imgs/[name][hash][ext]",
                 },
             },
             {
@@ -69,10 +69,13 @@ module.exports= {
             jQuery: 'jquery',
         }),
         new webpack.ProvidePlugin({
-            'jquery-zoom':'jquery-zoom',
-        }),
+            'zoom':'jquery-zoom',
+        }),/*
+       new webpack.ids.HashedModuleIdsPlugin({
+            context: __dirname,
+          }),*/
     ],
-    externals: {
+    /*externals: {
         zoom: 'jquery-zoom',
-    }
+    }*/
 };

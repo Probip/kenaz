@@ -26,7 +26,6 @@ $(document).ready(function(){
     $(".zoom-slider-img").click((e)=>{
         $(".zoom-slider").find('img.active').removeClass('active');
         const activeImg=$(e.target).attr('src');
-        var acImg;
         console.log(activeImg);
         $(".zoom-slider img").each(($i,$img)=>{
             /*slike se pojavljuju više puta u slideru, treba svakoj slici koja ima isti src tj. naziv dodijeliti klasu active */
@@ -34,38 +33,36 @@ $(document).ready(function(){
                 $img.classList.add('active');
             }
         })
-        acImg=activeImg
-        acImg=acImg.slice(5);
-        console.log('aktivna slika ',acImg);
-        $('.zoom-slider-container').css("backgroundImage", activeImg);
-        $('.zoom-slider-container').append(activeImg);
+        $('.zoom-slider-container:hover').css("backgroundImage", "url('"+activeImg+"')");
+        $('.zoom-slider-container .zoom-img-lg').attr('src',activeImg);
     });
+    
     //$('.zoom-slider-container .photo').zoom({url: '../assets/Layer\ 36.png'});
    // $('#test').zoom();
-    $('.zoom-slider-container img-lg').click(()=>{
-        console.log('klik na zoom sliku');
-    });
-    $(".zoom-slider-container").bind('mousemove',function(e){ 
-        
-        console.log("e.pageX: "+e.pageX + ", e.pageY: " + e.pageY); 
-        console.log("e.offsetX : "+e.offsetX + ",e.offsetY : " + e.offsetY );
-       console.log(e.target.className);
+
+    $(".zoom-slider-container").mousemove((e)=>{ 
        if(e.target.className=='slick-list draggable'){
-            var x,y,zoomer = e.target;
-            x = e.offsetX/zoomer.offsetWidth*100;
-            y = e.offsetY/zoomer.offsetHeight*100;
+            var x,y;
+            x = e.offsetX/e.target.offsetWidth*100;
+            y = e.offsetY/e.target.offsetHeight*100;
             x=x+'%';
             y=y+'%';
-            console.log('x je: ',x,' y je: ',y);
             $('.zoom-slider-container').css("backgroundPositionX", x);
             $('.zoom-slider-container').css("backgroundPositionY", y);
+            //console.log("e.offsetX : "+e.offsetX + ",e.offsetY : " + e.offsetY );
+            //console.log("e.target.offsetWidth : "+e.target.offsetWidth + ",e.target.offsetHeight : " + e.target.offsetHeight );
+            //console.log('x je: ',x,' y je: ',y);
         }
     });
-   
+    /*$('.zoom-slider-container .slick-prev').click(()=>{
+        $(".zoom-slider").find('img.active').removeClass('active');
+        $('.zoom-slider img:last').addClass('active');
+        console.log( $('.zoom-slider img:last'));
+    });*/
     $(".tag-item").click((e)=>{
         $(".tag-container").find('button.tag-item.active').removeClass('active');
         $(e.target).addClass('active');
-        //ako više tagova može biti aktivno u isto vrijeme (umjesto linija 41 i 42):
+        //ako više tagova može biti aktivno u isto vrijeme:
         //$(e.target).toggleClass('active');
     });
 

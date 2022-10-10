@@ -1,0 +1,127 @@
+@import './mixins';
+@import './var';
+footer{
+    margin-top: 20px;
+    height: 992px;
+    background-color: $footer-header-bg;
+    .pt-60{
+        padding-top: 60px;
+    }
+    .pb-60{
+        padding-bottom: 60px;
+    }
+    .container{
+        color: $text-light;
+        background-color: $footer-header-bg;
+        font-family: "Bitter";
+    }
+    .icons img{
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+        &.special{
+            background-color: $white;
+        }
+    }
+    div{
+        p,h2{
+            margin-bottom: 30px;
+        }
+    }
+    h2{
+        color: $text-footer;
+    }
+    .lorem-ipsum{
+        color: $text-date;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    .logo{
+        &-text{
+            font-size: 28px;
+            font-family: "Bitter";
+            color: $kenaz-logo;
+            margin:auto 15px;
+        }
+    }
+    .form-newsletter{
+        font-size: 16px;
+        input,input:active,input:focus,input:hover,input:valid, button{
+            padding: 20px;
+            border: none;
+            outline: none;
+            font-family: 'Varela Round';
+        }
+        input{
+            background-color: $footer-features-bg;
+            color: $text-light;
+        }
+        button{
+            width: 112px;
+            background-color: $bg-categories;
+            color: $text-footer;
+            cursor: pointer;
+            &:hover{
+                @include purpleHover();
+            }
+        }
+    }
+    .tag{
+        &-item{
+            background-color: $footer-features-bg;
+            color: $text-date;
+            border: none;
+            padding: 6px 8px;
+            margin: 3px 1px;
+            margin-left: 0;
+            font-size: 12px;
+            font-family: 'Varela Round';
+            cursor: pointer;
+            &:hover{
+                background-color: $footer-features-bg-hover;
+                transition: 0.5s ease-in;
+            }
+            &.active{
+                background-color: $bg-categories;
+                color: $text-footer;
+                &:hover{
+                    @include purpleHover();
+                }
+            }
+        }
+    }
+    .posts-footer{
+        h2{
+            color: $white;
+        }
+        img{
+            width: 70px;
+            height: 70px;
+            outline: $white 2px solid;
+            box-shadow: 0px 3px 1px rgba(0, 0, 1, 0.3);
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        .headline{
+            color: $text-footer;
+        }
+        .date{
+            margin: 0;
+        }
+        .line{
+            margin-bottom: 20px;
+        }
+    }
+    .line{
+        border: $footer-features-bg solid 1px;
+    }
+    .bottom{
+        font-size: 12px;
+        font-family: 'Varela Round';
+        padding-top: 20px;
+        margin-bottom: 100px;//još provjeriti za padding-bottom
+        #year{
+            grid-column: 1/span 2;
+        }
+    }
+}

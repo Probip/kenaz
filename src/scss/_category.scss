@@ -1,0 +1,64 @@
+@import './mixins';
+@import './var';
+.category{
+    grid-column: 1/ span 2;
+    background-color: $white;
+    border-left: 10px solid;
+    padding: 30px;
+    padding-top: 0;
+    display: grid;
+    row-gap: 30px;
+    &.sport,&.news{
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 20px;
+    }
+    &.sport.row,&.news.row{
+        padding-right: 30px;
+    }
+    &.business{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto 90px 90px;
+        div{
+            margin-left: 15px;
+        }
+    }
+    &.tech{
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 20px;
+    }
+    &.tech,&.travel{
+        .icon{
+            width: 16px;
+            height: 22px;
+            margin-left: 14px;
+        }
+        .column img{
+            height: 150px;
+        }
+    }
+    .top{
+       grid-column: 1/-1;
+       padding-top: 30px;
+       h2{
+        margin-top: -10px;
+       }
+    };
+}
+.news{
+    border-color: $category-news;
+}
+.business{
+    border-color: $category-business;
+}
+.sport{
+    border-color: $category-sport;
+}
+.life{
+    border-color: $category-life;
+}
+.tech{
+    border-color: $category-tech;
+}
+.travel{
+    border-color: $category-travel;
+}

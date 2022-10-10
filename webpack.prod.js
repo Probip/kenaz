@@ -4,6 +4,8 @@ const webpack=require('webpack');
 //const {merge}=require("webpack-merge");
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HashedModuleIdsPlugin = require("webpack-hashed-module-id-plugin");
+
 module.exports= {
     mode: 'production',
     //entry:path.resolve(__dirname,'src/js/index.js'),
@@ -79,6 +81,9 @@ module.exports= {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-        })
+        }),/*
+        new webpack.ids.HashedModuleIdsPlugin({
+             context: __dirname,
+           }),*/
     ],
 };
