@@ -1,17 +1,8 @@
 @import './slickfix';
 @import '~slick-carousel/slick/slick';
 @import '~slick-carousel/slick/slick-theme';
-@mixin date {
-    font-family: "Varela Round";
-    font-size: 12px;
-    color: $text-date;
-    margin-top: 5px;
-}
-@mixin flexCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+@import './mixins';
+
 $slick-prev-character: url('../assets/Shape\ 1\ copy\ 2.png');
 $slick-next-character: url('../assets/Shape\ 1\ copy.png');
 .slick-slider{

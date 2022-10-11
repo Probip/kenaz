@@ -1,5 +1,5 @@
 @import './mixins';
-@import './var';
+
 .main{
     grid-column: 1/ span 2;
     grid-template-columns: repeat(2,1fr);
@@ -11,7 +11,9 @@
     margin-bottom: 0;
     .news-list-item{
         grid-column: 1/-1;
-        padding: 0 30px;
+        //padding: 0 30px;
+        padding-left: 30px;
+        padding-right: 10px;
         h2:first-of-type{
             margin: 15px 0;
         }
