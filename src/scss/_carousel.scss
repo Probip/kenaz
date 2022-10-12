@@ -104,22 +104,12 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
     background-position-y: 50%;
     transition-timing-function: ease-in;
     background-blend-mode:color-burn;
-   /* &:hover{
-        background-image: url('../assets/Layer\ 36.png');
-        background-blend-mode: normal;
-        .zoom-img-lg{
-            opacity: 0;
-            transition: 0.3s ease-in-out;
-        }
-    }*/
-    //background-color: #4b4b4b;
     overflow: hidden;
     @include flexCenter();
    
     .slick-slider{
         padding: 0 20px;
     }
-    
     .zoom-img{
         position: absolute;
         &-lg{

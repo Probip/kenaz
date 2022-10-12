@@ -15,6 +15,7 @@ $(document).ready(function(){
         autoplaySpeed: 8000,
         arrows: true,
     });
+    /*slideri na index stranici unutar category */
     $(".slick-slider.slider2").slick({
         slidesToShow: 1,
         infinite:true,
@@ -45,12 +46,6 @@ $(document).ready(function(){
         prevArrow: $('.prev4'),
         nextArrow: $('.next4')
     });
-    $('.arrow-prev').click(()=>{
-        console.log('strelica prijeee! arrow prev');
-    });
-    $('.arrow-next').click(()=>{
-        console.log('strelica poslije!');
-    })
     $(".zoom-slider").slick({
         slidesToShow: 7,
         infinite:true,
