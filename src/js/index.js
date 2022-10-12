@@ -43,7 +43,22 @@ $(document).ready(function(){
    $('#close').click(()=>{
         $('.modal').css('visibility','hidden');
         $('.modal-img').css('display','none');
-   })
+   });
+   var n=1;
+   $('#zoom-in').click(()=>{
+        if(n<=3){
+            n=n+0.4;
+        }
+        $('.modal-img').css('transform','scale('+n+')');
+    });
+   $('#zoom-out').click(()=>{
+        if(n>=1){
+            n=n-0.4;
+        }
+        $('.modal-img').css('transform','scale('+n+')');
+    });
+
+    /*uvećanje za hover preko slike */
     /*$(".zoom-slider-container").mousemove((e)=>{ 
        if(e.target.className=='slick-list draggable'){
             var x,y;
@@ -64,6 +79,8 @@ $(document).ready(function(){
         const activeImg=$(".zoom-slider").find('.active').attr('src');
         $('.zoom-slider-container .zoom-img-lg').attr('src',activeImg);
     });
+
+    /*footer tagovi */
     $(".tag-item").click((e)=>{
         $(".tag-container").find('button.tag-item.active').removeClass('active');
         $(e.target).addClass('active');

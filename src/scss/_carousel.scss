@@ -183,7 +183,7 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
         animation-duration: 0.6s;
         max-width: 100%;
     }
-    &-close{
+    &-close,&-zoom-in,&-zoom-out{
         position: fixed;
         z-index: 21;
         top: 0;
@@ -194,6 +194,20 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
         font-family: 'Varela Round';
         font-size: 28px;
         color: $white;
+    }
+    &-zoom-out,&-zoom-in{
+        font-size: 16px;
+        padding: 10px 30px;
+        border: $white solid 2px;
+    }
+    &-zoom-in{
+        top: 30%;
+        cursor: zoom-in;
+        padding-right: 40px;
+    }
+    &-zoom-out{
+        top: 40%;
+        cursor: zoom-out;
     }
 }
 

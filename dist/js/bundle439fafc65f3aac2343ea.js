@@ -15847,6 +15847,23 @@ $(document).ready(function () {
     $('.modal').css('visibility', 'hidden');
     $('.modal-img').css('display', 'none');
   });
+  var n = 1;
+  $('#zoom-in').click(function () {
+    if (n <= 3) {
+      n = n + 0.4;
+    }
+
+    $('.modal-img').css('transform', 'scale(' + n + ')');
+  });
+  $('#zoom-out').click(function () {
+    if (n >= 1) {
+      n = n - 0.4;
+    }
+
+    $('.modal-img').css('transform', 'scale(' + n + ')');
+  });
+  /*uvećanje za hover preko slike */
+
   /*$(".zoom-slider-container").mousemove((e)=>{ 
      if(e.target.className=='slick-list draggable'){
           var x,y;
@@ -15868,6 +15885,8 @@ $(document).ready(function () {
     var activeImg = $(".zoom-slider").find('.active').attr('src');
     $('.zoom-slider-container .zoom-img-lg').attr('src', activeImg);
   });
+  /*footer tagovi */
+
   $(".tag-item").click(function (e) {
     $(".tag-container").find('button.tag-item.active').removeClass('active');
     $(e.target).addClass('active'); //ako više tagova može biti aktivno u isto vrijeme:
