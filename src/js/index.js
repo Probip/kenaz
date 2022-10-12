@@ -4,8 +4,9 @@ import { event, timers } from 'jquery';
 //import zoom from 'jquery-zoom';
 import '@zeitiger/elevatezoom';
 require('slick-carousel');
-/*carousels */
+
 $(document).ready(function(){
+   var n=1;
     $(".slick-slider.slider1").slick({
         slidesToShow: 1,
         infinite:true,
@@ -14,6 +15,42 @@ $(document).ready(function(){
         autoplaySpeed: 8000,
         arrows: true,
     });
+    $(".slick-slider.slider2").slick({
+        slidesToShow: 1,
+        infinite:true,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 8000,
+        arrows: true,
+        prevArrow: $('.prev'),
+        nextArrow: $('.next')
+    });
+    $(".slick-slider.slider3").slick({
+        slidesToShow: 1,
+        infinite:true,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 8000,
+        arrows: true,
+        prevArrow: $('.prev3'),
+        nextArrow: $('.next3')
+    });
+    $(".slick-slider.slider4").slick({
+        slidesToShow: 2,
+        infinite:true,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 9000,
+        arrows: true,
+        prevArrow: $('.prev4'),
+        nextArrow: $('.next4')
+    });
+    $('.arrow-prev').click(()=>{
+        console.log('strelica prijeee! arrow prev');
+    });
+    $('.arrow-next').click(()=>{
+        console.log('strelica poslije!');
+    })
     $(".zoom-slider").slick({
         slidesToShow: 7,
         infinite:true,
@@ -35,16 +72,18 @@ $(document).ready(function(){
         $('.zoom-slider-container .zoom-img-lg').attr('src',activeImg);
     });
    $('.zoom-img-icon').click(()=>{
-    const activeImg=$(".zoom-slider").find('img.active').attr('src');
+        n=1;
+        const activeImg=$(".zoom-slider").find('img.active').attr('src');
         $('.modal').css('visibility','visible');
-        $('.modal-img').attr('src',activeImg)
+        $('.modal-img').attr('src',activeImg);
+        $('.modal-img').css('transform','scale('+n+')');
         $('.modal-img').css('display','block');
    })
    $('#close').click(()=>{
         $('.modal').css('visibility','hidden');
         $('.modal-img').css('display','none');
+        n=1;
    });
-   var n=1;
    $('#zoom-in').click(()=>{
         if(n<=3){
             n=n+0.4;
@@ -52,7 +91,7 @@ $(document).ready(function(){
         $('.modal-img').css('transform','scale('+n+')');
     });
    $('#zoom-out').click(()=>{
-        if(n>=1){
+        if(n>1){
             n=n-0.4;
         }
         $('.modal-img').css('transform','scale('+n+')');

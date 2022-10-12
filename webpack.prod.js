@@ -88,7 +88,7 @@ module.exports= {
              context: __dirname,
            }),*/
     ],
-    optimization: {
+   /* optimization: {
         minimizer: [
           new ImageMinimizerPlugin({
             minimizer: {
@@ -102,5 +102,5 @@ module.exports= {
             },
           })
         ]
-    }
+    }*/
 };

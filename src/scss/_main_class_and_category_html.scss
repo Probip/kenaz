@@ -48,16 +48,19 @@
             .btn-news{
                 grid-column-start:2;
                 background-color: $bg-categories;
-                color: $white;
                 border: none;
                 padding: 8px 20px;
                 margin-top: 20px;
                 margin-bottom: 65px;
                 width: 120px;
-                font-family: 'Varela Round';
-                font-size: 14px;
-                line-height: 16.86px;
                 cursor: pointer;
+                a{
+                    font-family: 'Varela Round';
+                    font-size: 14px;
+                    line-height: 16.86px;
+                    color: $white;
+                    text-decoration: none;
+                }
             }
         }
     }
