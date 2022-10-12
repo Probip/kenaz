@@ -5,6 +5,7 @@ const webpack=require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HashedModuleIdsPlugin = require("webpack-hashed-module-id-plugin");
+const ImageMinimizerPlugin=require('image-minimizer-webpack-plugin');
 
 module.exports= {
     mode: 'production',
@@ -42,7 +43,8 @@ module.exports= {
             },
             {
                 test:/\.(svg|png|jpg|gif)$/i,
-                type: "asset/resource",
+                type: "asset",
+                //type: "asset/resource",
                 generator: {
                   filename: "imgs/[name][hash][ext]",
                 },
@@ -86,4 +88,19 @@ module.exports= {
              context: __dirname,
            }),*/
     ],
+    optimization: {
+        minimizer: [
+          new ImageMinimizerPlugin({
+            minimizer: {
+              implementation: ImageMinimizerPlugin.imageminMinify,
+              options: {
+                plugins: [
+                  ["jpegtran", { progressive: true }],
+                  ["optipng", { optimizationLevel: 5 }],
+                ],
+                },
+            },
+          })
+        ]
+    }
 };

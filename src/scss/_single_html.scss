@@ -1,5 +1,8 @@
 @import './mixins';
-
+.m-50-30-0-30{
+    margin: 0 30px;
+    margin-top: 50px;
+}
 .headline-img-container{
     grid-column: 1/-1;
     position: relative;
@@ -68,6 +71,7 @@
             padding-right: 10px;
             font-family: 'Varela Round';
             font-size: 13px;
+            color: $text-news-p;
         }
     }
     .comments{
@@ -75,45 +79,56 @@
         h2{
             margin-bottom: 0;
         }
+        .add-your-comment{
+            margin-top: 35px;
+        }
         .pt-45{
             padding-top: 45px;
         }
         .p-0{
             padding: 0;
+            margin: 0;
         }
         img{
-            width: 48px;
-            height: 48px;
+            width: 55px;
+            height: 55px;
             border: $white 2px solid;;
             outline: $text-footer 1px solid;
+            margin-right: 20px;
         }
         .user{
             font-family: 'Bitter';
             font-size: 18px;
             line-height: 20px;
             color: $bg-categories;
-            padding-left: 20px;
         }
         .date{
-            margin-top: 0;
+            margin: 0;
+            padding: 0;
+            margin-left: 10px;
+            margin-top: 1px;
             font-size: 11px;
             line-height: 20px;
+            font-family: 'Varela Round';
         }
        .row{
+        padding: 0;
             a{
                 margin-right: 30px;
+                color: $bg-categories;
                 cursor: pointer;
+                font-family: 'Varela Round';
+                font-size: 14px;
+                line-height: 17px;
             }
        }
        .text-comment{
-        margin-top: -10px;
-        padding-left: 20px;
-        padding-right: 20px;
         font-family: 'Varela Round';
         font-size: 13px;
         line-height: 20px;
             &-2{
-                padding-left: 30px;
+                padding: 0 30px;
+                margin: 25px 0;
             }
         }
     }
