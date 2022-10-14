@@ -276,11 +276,17 @@ a{
         ul:last-of-type{
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             border-top: $footer-features-bg 2px solid;
             li{
                 padding-left: 0;
-                margin-left: 10px;
+                margin-left: 15px;
+                margin-right: 4px;
+                height: 50px;
+                &:last-of-type{
+                    position: absolute;
+                    right: 0;
+                }
             }
         }
     }
@@ -362,6 +368,13 @@ a{
                 }
             }
         }
+       /* .container-banner-xs{
+            width: 100vw;
+            justify-content: center;
+        }
+        .envato{
+            margin-left: 70px;
+        }*/
     }
     .footer .container{
         padding-left:  20px;
@@ -403,17 +416,31 @@ a{
     }
 }
 @media only screen and (max-width: 480px){
+    .header-nav ul:last-of-type li{
+        margin-left: 10px;
+        margin-right: 0px;
+    }
     .container .headline-img-container .bottom-container .text h2{
         font-size: 16px;
         width: 100%;
         line-height: normal;
     }
-    .categories ul li{
-        width: 32%;
+    /*.categories ul li{
+        width: 33.3%;
+    }*/
+    .categories ul{
+        display: flex;
+        flex-direction: column;
+        li{
+            display: none;
+        }
+        li.active{
+            display: flex;
+        }
     }
     //category.html i index
     .container{
-       grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1,1fr);
         width: 100vw;
         max-width: 100vw;
         .slider1{
@@ -457,6 +484,7 @@ a{
         }
         .zoom-slider-container{
             height: 200px;
+            max-width: 100vw;
             .slick-list{
                 display: none;
             }
@@ -495,6 +523,7 @@ a{
             width: 100vw;
             iframe{
                 height: 280px;
+                max-width: 100vw;
             }
         }
         .container-banner-xs{
@@ -596,5 +625,24 @@ a{
         .container .footer-tags-column{
                 max-width: 100%;
         }
+        .posts-footer{
+            padding-left: 10px;
+            padding-right: 10px;
+            max-width: 100vw;
+            &-twitter-timeline{
+                width: 200px;
+                max-width: 200px;
+                padding-left: 0;
+                padding-right: 0;
+                .twitter-timeline{
+                    width: 200px;
+                    max-width: 200px;
+                    margin-left: -50px;
+                }
+            }
+        }
+    }
+    .line{
+        width: 100vw;
     }
 }

@@ -47,19 +47,37 @@
 }
 .news{
     border-color: $category-news;
+    &.active{
+        background-color: $category-news ;
+    }
 }
 .business{
     border-color: $category-business;
+    &.active{
+        background-color: $category-business ;
+    }
 }
 .sport{
     border-color: $category-sport;
+    &.active{
+        background-color: $category-sport ;
+    }
 }
 .life{
     border-color: $category-life;
+    &.active{
+        background-color: $category-life ;
+    }
 }
 .tech{
     border-color: $category-tech;
+    &.active{
+        background-color: $category-tech ;
+    }
 }
 .travel{
     border-color: $category-travel;
+    &.active{
+        background-color: $category-travel;
+    }
 }
