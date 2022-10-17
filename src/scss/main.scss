@@ -425,10 +425,10 @@ a{
         width: 100%;
         line-height: normal;
     }
-    /*.categories ul li{
+   .categories ul li{
         width: 33.3%;
-    }*/
-    .categories ul{
+    }
+     /*.categories ul{
         display: flex;
         flex-direction: column;
         li{
@@ -437,7 +437,7 @@ a{
         li.active{
             display: flex;
         }
-    }
+    }*/
     //category.html i index
     .container{
         grid-template-columns: repeat(1,1fr);

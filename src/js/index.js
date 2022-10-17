@@ -139,13 +139,13 @@ $(document).ready(function(){
         });
     });
     $('.categories li').click((e)=>{
-        $('.categories li.active').removeClass('active');
+        $('.categories').find('li.active').removeClass('active');
         //$('.categories li').css('display','flex');
-        $(e.target).addClass('active');
+        $(e.target).parent().addClass('active');
        // $('.categories ul').css('visibility','hidden');
         //$('.categories li.active').css('display','flex');
     })
-    $('.categories li.active').click(()=>{  
+   /* $('.categories li.active').click(()=>{  
         $('.categories li').css('display','flex');
-    })
+    })*/
 })
