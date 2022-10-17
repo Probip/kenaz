@@ -8,6 +8,9 @@
     padding-top: 0;
     display: grid;
     row-gap: 30px;
+    a{
+        text-decoration: none;
+    }
     &.sport,&.news{
         grid-template-columns: repeat(3,1fr);
         column-gap: 20px;

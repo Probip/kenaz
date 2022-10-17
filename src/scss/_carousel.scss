@@ -74,8 +74,7 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
     }
 }
 .slider2,.slider3,.slider4{
-    overflow: hidden;
-    
+    overflow: hidden;   
 }
 .category{
     position: relative;
@@ -170,13 +169,22 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
     background-color: rgba($color: #363F48, $alpha: 0.97);
     width: 100%;
     height: 100vh;
-    padding: 100px;
+    padding-bottom: 150px;
+    padding-top: 200px;
     position: fixed;
     top: 0;
     left: 0;
     display: block;
     z-index: 20;
     @include flexCenter();
+    &-top{
+        background-color: #363F48;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        height: 65px;
+        width: 100%;
+    }
     &-img{
         display: none;
         padding: 80px 0;
@@ -188,26 +196,32 @@ $slick-next-character: url('../assets/Shape\ 1\ copy.png');
         position: fixed;
         z-index: 21;
         top: 0;
-        right: 0;
-        padding: 30px;
+        padding: 20px;
         margin: 0 30px;
         cursor: pointer;
         font-family: 'Varela Round';
         font-size: 28px;
         color: $white;
     }
+    &-close{
+        right: 0;
+    }
     &-zoom-out,&-zoom-in{
-        font-size: 20px;
-        padding: 10px 30px;
+        font-size: 12px;
+        padding: 10px 20px;
         border: $white solid 2px;
+        top: 20px;
+        border-radius: 3px;
+        left: 50vw;
     }
     &-zoom-in{
-        top: 30%;
+        //top: 30%;
         cursor: zoom-in;
-        padding-right: 44px;
+        padding-right: 30px;
+        margin-left: -80px;
     }
     &-zoom-out{
-        top: 40%;
+        //top: 40%;
         cursor: zoom-out;
     }
 }

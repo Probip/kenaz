@@ -15,6 +15,9 @@
         position: relative;
         background-color: $bg-categories;
         padding-bottom: 40px;
+        a{
+            text-decoration: none;
+        }
         &-list{
             height: 50px;
             background-color: $bg-categories-dark;
@@ -40,12 +43,12 @@
             &.active{
                 z-index: 2;
             }
-            &#tab-2{
+            /*&#tab-2{
                 background-color: #435282;
             }
             &#tab-3{
                 background-color: #754382;
-            }
+            }*/
             &-item{
                 z-index: 1;
                 padding: 20px 30px;

@@ -4,7 +4,7 @@ const webpack=require('webpack');
 //const {merge}=require("./webpack-merge");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const HashedModuleIdsPlugin = require("webpack-hashed-module-id-plugin");
-
+//import './src/data/data.json'
 module.exports= {
     //entry:path.resolve(__dirname,'src/js/index.js'),
     entry: {
@@ -43,6 +43,10 @@ module.exports= {
                 generator: {
                   filename: "fonts/[name][ext]",
                 },
+            },
+            {
+                test:/\.json$/,
+                type: "json",
             },
         ],
     },

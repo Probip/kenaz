@@ -1,6 +1,9 @@
 @import './mixins';
 
 footer{
+    a{
+        text-decoration: none;
+    }
     margin-top: 20px;
     height: 992px;
     background-color: $footer-header-bg;
