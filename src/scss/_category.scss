@@ -50,37 +50,37 @@
 }
 .news{
     border-color: $category-news;
-    &.active{
+    &.active,&.active:hover{
         background-color: $category-news ;
     }
 }
 .business{
     border-color: $category-business;
-    &.active{
+    &.active,&.active:hover{
         background-color: $category-business ;
     }
 }
 .sport{
     border-color: $category-sport;
-    &.active{
+    &.active,&.active:hover{
         background-color: $category-sport ;
     }
 }
 .life{
     border-color: $category-life;
-    &.active{
+    &.active,&.active:hover{
         background-color: $category-life ;
     }
 }
 .tech{
     border-color: $category-tech;
-    &.active{
+    &.active,&.active:hover{
         background-color: $category-tech ;
     }
 }
 .travel{
     border-color: $category-travel;
-    &.active{
+    &.active,&.active:hover{
         background-color: $category-travel;
     }
 }

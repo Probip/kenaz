@@ -9,7 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports= {
     //entry:path.resolve(__dirname,'src/js/index.js'),
     entry: {
-        main: [path.resolve(__dirname,'src/js/index.js'),path.resolve(__dirname,'src/js/file.js'), path.resolve(__dirname,'src/scss/main.scss'),],
+        main: [path.resolve(__dirname,'src/js/index.js'),path.resolve(__dirname,'src/js/file.js'), path.resolve(__dirname,'src/scss/main.scss'),path.resolve(__dirname,'src/data/data.json')],
     },
     module: {
         rules:[
