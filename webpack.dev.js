@@ -1,6 +1,7 @@
 const path=require('path');
 const common=require("./webpack.common");
 const webpack=require('webpack');
+const json=require('./src/data/data.json');
 //const {merge}=require("./webpack-merge");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const HashedModuleIdsPlugin = require("webpack-hashed-module-id-plugin");
@@ -34,7 +35,8 @@ module.exports= {
                 test:/\.(svg|png|jpg|gif)$/i,
                 type: "asset/resource",
                 generator: {
-                  filename: "imgs/[name][hash][ext]",
+                  filename: "imgs/[name][ext]",
+                  //filename: "imgs/[name][hash][ext]",
                 },
             },
             {

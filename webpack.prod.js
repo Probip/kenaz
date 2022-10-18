@@ -46,7 +46,8 @@ module.exports= {
                 type: "asset",
                 //type: "asset/resource",
                 generator: {
-                  filename: "imgs/[name][hash][ext]",
+                    filename: "imgs/[name][ext]",
+                  //filename: "imgs/[name][hash][ext]",
                 },
             },
             {
