@@ -1,7 +1,5 @@
-import data from '../data/data.json'
-console.log("učitan je file.js koji je u js folderu!");
+import data from '../data/data.json';
 var cat='news',news='';
-//console.log(data.news[0].title);
 $(document).ready(function(){
 
     function categoryMainContent(cat){
@@ -15,6 +13,8 @@ $(document).ready(function(){
         return news;
     }
     
+
+
     $('.categories li').click((e)=>{
         $('.categories').find('li.active').removeClass('active');
         $(e.target).parent().addClass('active');
@@ -22,22 +22,22 @@ $(document).ready(function(){
         cat=cat.toLowerCase();
         $('#category-main-content').html(categoryMainContent(cat));
     })
-   
     $('#category-main-content').html(categoryMainContent(cat));
+
+
+    
+    function createComment(name,email,text,date,hours) {
+        htmlComment='<div class="row pt-45 m-50-30-0-30"><img src="./imgs/user1.png" alt="user image"><span><div class="row space-between p-0"><div class="row p-0"><p class="user p-0">';
+        htmlComment+=name+'</p><p class="date p-0">'+date+' '+hours+'</p></div><a class="reply">Reply</a></div>';
+        htmlComment+='<p class="p-0 text-comment">'+text+'</p></span></div>';
+        return htmlComment;
+      }
 
 
     const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     $('#submit-comment').click((e)=>{
         var name,email,text,d,hours,timeOfTheDay,minutes,date,htmlComment='';
         e.preventDefault();
-
-        function createComment(name,email,text,date,hours) {
-            htmlComment='<div class="row pt-45 m-50-30-0-30"><img src="./imgs/user1.png" alt="user image"><span><div class="row space-between p-0"><div class="row p-0"><p class="user p-0">';
-            htmlComment+=name+'</p><p class="date p-0">'+date+' '+hours+'</p></div><a class="reply">Reply</a></div>';
-            htmlComment+='<p class="p-0 text-comment">'+text+'</p></span></div>';
-            return htmlComment;
-          }
-
         name=$('form #name').val();
         email=$('form #email').val();
         text=$('form #text').val();
@@ -60,11 +60,15 @@ $(document).ready(function(){
         date=month[d.getMonth()]+' '+d.getDate()+','+d.getFullYear();
         console.log(name,email,text,date,hours);
 
+
         data.comments.push({"name":name,"email":email,"text":text,"date":date,"hours":hours});
         console.log(data.comments);
+
+
         //da se novi komentar prikaže prvi među svim komentarima:
         //$('#comments h2:first-of-type').after(createComment(name,email,text,date,hours));
         $('#comments h2:last-of-type').before(createComment(name,email,text,date,hours));
+       
     })
     
 

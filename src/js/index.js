@@ -4,7 +4,6 @@ import { event, timers } from 'jquery';
 //import zoom from 'jquery-zoom';
 import '@zeitiger/elevatezoom';
 require('slick-carousel');
-
 $(document).ready(function(){
    var n=1;
     $(".slick-slider.slider1").slick({
