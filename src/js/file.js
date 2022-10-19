@@ -1,5 +1,7 @@
 import data from '../data/data.json';
-var cat='news',news='';
+var cat='news',news='',name,email,text,d,hours,timeOfTheDay,minutes,date,htmlComment='';
+
+
 $(document).ready(function(){
 
     function categoryMainContent(cat){
@@ -31,12 +33,12 @@ $(document).ready(function(){
         htmlComment+=name+'</p><p class="date p-0">'+date+' '+hours+'</p></div><a class="reply">Reply</a></div>';
         htmlComment+='<p class="p-0 text-comment">'+text+'</p></span></div>';
         return htmlComment;
-      }
+    }
 
 
     const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     $('#submit-comment').click((e)=>{
-        var name,email,text,d,hours,timeOfTheDay,minutes,date,htmlComment='';
+        
         e.preventDefault();
         name=$('form #name').val();
         email=$('form #email').val();
