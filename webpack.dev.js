@@ -4,6 +4,8 @@ const webpack=require('webpack');
 const json=require('./src/data/data.json');
 //const {merge}=require("./webpack-merge");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { data } = require('jquery');
+//const FsWebpackPlugin = require('fs-webpack-plugin');
 //const HashedModuleIdsPlugin = require("webpack-hashed-module-id-plugin");
 //import './src/data/data.json'
 module.exports= {
@@ -48,7 +50,10 @@ module.exports= {
             },
             {
                 test:/\.json$/,
-                type: "json",
+                type: "asset/resource",
+                generator: {
+                    filename: "data/[name][ext]",
+                }
             },
         ],
     },
@@ -76,9 +81,9 @@ module.exports= {
         }),
         new webpack.ProvidePlugin({
             'zoom':'jquery-zoom',
-        }),/*
-       new webpack.ids.HashedModuleIdsPlugin({
-            context: __dirname,
+        }),
+       /*new webpack.ids.HashedModuleIdsPlugin({
+            context: path.resolve(__dirname,'src')
           }),*/
     ],
     /*externals: {
