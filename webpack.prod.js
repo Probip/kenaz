@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HashedModuleIdsPlugin = require("webpack-hashed-module-id-plugin");
 const ImageMinimizerPlugin=require('image-minimizer-webpack-plugin');
-
+const CopyPlugin = require("copy-webpack-plugin");
 module.exports= {
     mode: 'production',
     //entry:path.resolve(__dirname,'src/js/index.js'),
@@ -91,7 +91,15 @@ module.exports= {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-        }),/*
+        }),
+        new CopyPlugin({
+            patterns: [
+              { from: path.resolve(__dirname,'src/data/data.json'), to: "data" },
+              { from: path.resolve(__dirname,'src/assets/calendar.svg'), to: "imgs" },
+              { from: path.resolve(__dirname,'src/assets/user1.png'), to: "imgs" },
+            ],
+          }),
+        /*
         new webpack.ids.HashedModuleIdsPlugin({
              context: __dirname,
            }),*/

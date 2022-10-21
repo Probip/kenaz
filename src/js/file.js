@@ -1,4 +1,4 @@
-import data from '../data/data.json';
+//import data from '../data/data.json';
 var cat='news',news='',name,email,text,d,hours,timeOfTheDay,minutes,date,htmlComment='';
 
 
