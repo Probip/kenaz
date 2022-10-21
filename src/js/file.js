@@ -1,4 +1,4 @@
-/*import data from '../data/data.json';*/
+import data from '../data/data.json';
 var cat='news',news='',name,email,text,d,hours,timeOfTheDay,minutes,date,htmlComment='';
 
 
@@ -107,7 +107,7 @@ $(document).ready(function(){
 
      $('.categories li a').click(()=>{
         console.log('klik na test button.');
-        $.getJSON("../data/data.json",(obj)=>{
+        $.getJSON("./data/data.json",(obj)=>{
             $.each(obj, (category,val)=>{
                 if(category==cat){   
                     $('#category-main-content').html(categoryMainContent(cat,val));
@@ -115,7 +115,13 @@ $(document).ready(function(){
             })
         })
     })//novo
-
+if(cat=='news'){
+    $.getJSON("../data/data.json",(obj)=>{
+        var value=obj[cat];
+        console.log(cat)
+        $('#category-main-content').html(categoryMainContent(cat,value));
+    })
+}
     function createComment(name,email,text,date,hours) {
         htmlComment='<div class="row pt-45 m-50-30-0-30"><img src="./imgs/user1.png" alt="user image"><span><div class="row space-between p-0"><div class="row p-0"><p class="user p-0">';
         htmlComment+=name+'</p><p class="date p-0">'+date+' '+hours+'</p></div><a class="reply">Reply</a></div>';
@@ -126,7 +132,6 @@ $(document).ready(function(){
 
     const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     $('#submit-comment').click((e)=>{
-        
         e.preventDefault();
         name=$('form #name').val();
         email=$('form #email').val();
