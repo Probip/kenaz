@@ -30,7 +30,7 @@ $(document).ready(function(){
         infinite:true,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 8000,
+        autoplaySpeed: 14000,
         arrows: true,
         prevArrow: $('.prev3'),
         nextArrow: $('.next3')
@@ -40,11 +40,13 @@ $(document).ready(function(){
         infinite:true,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 9000,
+        autoplaySpeed: 11000,
         arrows: true,
         prevArrow: $('.prev4'),
         nextArrow: $('.next4')
     });
+
+
     $(".zoom-slider").slick({
         slidesToShow: 7,
         infinite:true,

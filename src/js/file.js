@@ -211,6 +211,17 @@ if(cat=='news'){
             console.log(user,email,text,date,hours);
             //do tu je isto
 
+           /* $.ajax({
+                type: 'POST',
+                url: '/data/data.json',
+                data: {
+                    "name": user,
+                    "email": email
+                },
+                success: function (newComment) {
+                    console.log('ajax!');
+                  }
+            })ne radi s POST*/
             $.getJSON("../data/data.json",(obj)=>{
                 $.each(obj, (key,val)=>{
                     if(key=='comments'){
